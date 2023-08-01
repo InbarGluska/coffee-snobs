@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { StyledLink } from "@/components/StyledLink";
 
 const HomeContainer = styled.div`
