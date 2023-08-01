@@ -23,9 +23,9 @@ export default function coffeeShops() {
 
     // Placeholder data for the Card component
     const placeholderCardData = {
-        name: "Coffee Shop",
-        image: "/path/to/image.jpg",
-        location: "Some Location",
+        name: "Bonanza Roasters",
+        image: "https://www.ignant.com/wp-content/uploads/2019/06/ignant-travel-bonanza-coffee-001-1-1440x960.jpg",
+        location: "Adalbertstraße 70, 10999 Berlin",
         id: "123",
     };
 

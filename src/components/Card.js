@@ -3,30 +3,54 @@ import styled from "styled-components";
 import { StyledImage } from "@/components/StyledImage";
 
 const Article = styled.article`
-    border: 5px solid black;
-    border-radius: 0.8rem;
-    padding: 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 1rem;
 `;
 
 const ImageContainer = styled.div`
     position: relative;
-    height: 10rem;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+`;
+
+const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 `;
 
 const Figure = styled.figure`
-    position: relative;
     margin: 0;
 `;
 
 const Anchor = styled.a`
-    &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+
+    ${ImageContainer}:hover & {
+        opacity: 1;
+    }
+
+    &:hover {
+        text-decoration: underline;
     }
 `;
 
