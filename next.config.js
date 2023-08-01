@@ -4,6 +4,9 @@ const nextConfig = {
     compiler: {
         styledComponents: true,
     },
+    images: {
+        domains: ["www.ignant.com"], // Add the required image domain here
+    },
 };
 
 module.exports = nextConfig;
