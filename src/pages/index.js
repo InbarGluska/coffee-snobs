@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { StyledLink } from "@/components/StyledLink";
 
 const HomeContainer = styled.div`
     display: flex;
@@ -8,40 +8,16 @@ const HomeContainer = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh;
-`;
-
-const Button = styled.a`
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    background-color: #a47e3b;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: #61481c;
-    }
+    background-image: url("https://publiccoffeeroasters.com/wp-content/uploads/2021/06/PCR_Latteart_Argin_Quadratisch-1024x1024.jpg");
+    background-size: cover;
 `;
 
 export default function Home() {
-    const router = useRouter();
-
     return (
         <HomeContainer>
-            <Link href="/coffeeshops" passHref>
-                <Button>Coffee Shops</Button>
-            </Link>
-            <Link href="/baristajobs" passHref>
-                <Button>Barista Jobs</Button>
-            </Link>
-            <Link href="/articles" passHref>
-                <Button>Articles</Button>
-            </Link>
+            <StyledLink href="/coffeeshops">Coffee Shops</StyledLink>
+            <StyledLink href="/baristajobs">Barista Jobs</StyledLink>
+            <StyledLink href="/articles">Articles</StyledLink>
         </HomeContainer>
     );
 }
