@@ -92,11 +92,9 @@ export default function Card({
             <p>Location: {location}</p>
             <p>mapURL: {mapURL}</p>
             <p>description: {description}</p>
-            {/* <Link href={`shops/${id}`} passHref legacyBehavior>
-                <Anchor>
-                    <ScreenReaderOnly>More Info</ScreenReaderOnly>
-                </Anchor>
-            </Link> */}
+            <Link href={`/coffeeshop-details/${mapURL}`} passHref>
+                <div>See more details</div>
+            </Link>
         </Article>
     );
 }

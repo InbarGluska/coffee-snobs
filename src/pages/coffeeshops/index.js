@@ -38,9 +38,6 @@ export default function CoffeeShops() {
                     );
                 })}
             </List>
-            <Link href="/shop" passHref legacyBehavior>
-                <StyledLink>Visit Shop</StyledLink>
-            </Link>
         </>
     );
 }
