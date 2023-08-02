@@ -3,6 +3,7 @@ import Card from "@/components/Card.js";
 import useSWR from "swr";
 import Link from "next/link.js";
 import { StyledLink } from "@/components/StyledLink";
+import Navbar from "@/components/Navbar";
 
 const List = styled.ul`
     list-style: none;
@@ -38,6 +39,7 @@ export default function CoffeeShops() {
                     );
                 })}
             </List>
+            <Navbar />
         </>
     );
 }
