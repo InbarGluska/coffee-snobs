@@ -5,7 +5,7 @@ const nextConfig = {
         styledComponents: true,
     },
     images: {
-        domains: ["www.ignant.com"], // Add the required image domain here
+        domains: ["www.ignant.coseatingntent"],
     },
 };
 
