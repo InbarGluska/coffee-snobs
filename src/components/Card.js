@@ -67,7 +67,7 @@ const ScreenReaderOnly = styled.span`
 `;
 
 export default function Card({
-    // _id,
+    id,
     name,
     location,
     image,
@@ -92,7 +92,7 @@ export default function Card({
             <p>Location: {location}</p>
             <p>mapURL: {mapURL}</p>
             <p>description: {description}</p>
-            <Link href={`/coffeeshop-details/${mapURL}`} passHref>
+            <Link href={`shops/${id}`} passHref>
                 <div>See more details</div>
             </Link>
         </Article>
