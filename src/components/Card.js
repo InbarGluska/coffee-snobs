@@ -1,4 +1,4 @@
-import Link from "next/link.js";
+import Link from "next/link";
 import styled from "styled-components";
 import { StyledImage } from "@/components/StyledImage";
 
@@ -30,40 +30,28 @@ const Figure = styled.figure`
     margin: 0;
 `;
 
-const Anchor = styled.a`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: block;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-
-    ${ImageContainer}:hover & {
-        opacity: 1;
-    }
-
-    &:hover {
-        text-decoration: underline;
-    }
+const Figcaption = styled.figcaption`
+    font-weight: bold;
 `;
 
-const ScreenReaderOnly = styled.span`
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+const Location = styled.p`
+    font-weight: bold;
+`;
+
+const SeeMoreLink = styled.a`
+    display: block;
+    background-color: #a47e3b;
+    color: #ffffff;
+    padding: 2px 16px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #61481c;
+    }
 `;
 
 export default function Card({
@@ -81,20 +69,19 @@ export default function Card({
                     <StyledImage
                         src={image}
                         fill
-                        sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt=""
                     />
                 </ImageContainer>
-                <figcaption>{name}</figcaption>
+                <Figcaption>{name}</Figcaption>
             </Figure>
-            <p>Location: {location}</p>
-            <p>mapURL: {mapURL}</p>
-            <p>description: {description}</p>
-            <Link href={`shops/${id}`} passHref>
-                <div>See more details</div>
-            </Link>
+            <Location>Location: {location}</Location>
+            {/* <p>mapURL: {mapURL}</p> */}
+            {/* <p>description: {description}</p> */}
+            {/* <Link href={`shops/${id}`} passHref>
+                <SeeMoreLink>See more details</SeeMoreLink>
+            </Link> */}
+            <SeeMoreLink href={`shops/${id}`}>See more details</SeeMoreLink>
         </Article>
     );
 }
