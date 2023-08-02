@@ -78,9 +78,7 @@ export default function Card({
             <Location>Location: {location}</Location>
             {/* <p>mapURL: {mapURL}</p> */}
             {/* <p>description: {description}</p> */}
-            {/* <Link href={`shops/${id}`} passHref>
-                <SeeMoreLink>See more details</SeeMoreLink>
-            </Link> */}
+
             <SeeMoreLink href={`shops/${id}`}>See more details</SeeMoreLink>
         </Article>
     );
