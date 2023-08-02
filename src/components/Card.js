@@ -66,7 +66,14 @@ const ScreenReaderOnly = styled.span`
     border-width: 0;
 `;
 
-export default function Card({ name, image, location, id }) {
+export default function Card({
+    // _id,
+    name,
+    location,
+    image,
+    mapURL,
+    description,
+}) {
     return (
         <Article>
             <Figure>
@@ -83,11 +90,13 @@ export default function Card({ name, image, location, id }) {
                 <figcaption>{name}</figcaption>
             </Figure>
             <p>Location: {location}</p>
-            <Link href={`places/${id}`} passHref legacyBehavior>
+            <p>mapURL: {mapURL}</p>
+            <p>description: {description}</p>
+            {/* <Link href={`shops/${id}`} passHref legacyBehavior>
                 <Anchor>
                     <ScreenReaderOnly>More Info</ScreenReaderOnly>
                 </Anchor>
-            </Link>
+            </Link> */}
         </Article>
     );
 }
