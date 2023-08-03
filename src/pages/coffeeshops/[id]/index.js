@@ -22,22 +22,15 @@ const ListItem = styled.li`
     width: 100%;
 `;
 
-// export default function DetailsPage() {
-//     const router = useRouter();
-//     const { isReady } = router;
-//     const { push } = router;
-//     const { id } = router.query;
-
-//     const { data: shop, isLoading, error } = useSWR(`/api/shops/${id}`);
-
-//     if (!isReady || isLoading || error) return <h2>Loading...</h2>;
-
 export default function DetailsPage() {
-    const { id } = useRouter().query;
+    const router = useRouter();
+    const { isReady } = router;
+    const { push } = router;
+    const { id } = router.query;
+
     const { data: shop, isLoading, error } = useSWR(`/api/shops/${id}`);
 
-    if (isLoading) return <h2>Loading...</h2>;
-    if (error) return <h2>Error loading data</h2>;
+    if (!isReady || isLoading || error) return <h2>Loading...</h2>;
 
     return (
         <>
