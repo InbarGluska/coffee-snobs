@@ -49,7 +49,19 @@ const SubmitButton = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
     margin-bottom: 3.5rem;
+`;
+
+const DeleteButton = styled.button`
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    font-weight: bold;
 `;
 
 export default function ReviewsSection({ shopId }) {
@@ -83,6 +95,12 @@ export default function ReviewsSection({ shopId }) {
         localStorage.setItem("reviews", JSON.stringify(reviews));
     }, [reviews]);
 
+    const handleDeleteReview = (id) => {
+        setReviews((prevReviews) =>
+            prevReviews.filter((review) => review.id !== id)
+        );
+    };
+
     return (
         <ReviewsContainer>
             <h2>Reviews</h2>
@@ -106,6 +124,11 @@ export default function ReviewsSection({ shopId }) {
                         <ReviewName>{review.name}</ReviewName>
                         <span>–</span>
                         <span>{new Date(review.id).toLocaleDateString()}</span>
+                        <DeleteButton
+                            onClick={() => handleDeleteReview(review.id)}
+                        >
+                            X
+                        </DeleteButton>
                     </ReviewHeader>
                     <ReviewText>{review.text}</ReviewText>
                 </ReviewBox>
