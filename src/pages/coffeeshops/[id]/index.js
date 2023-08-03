@@ -3,29 +3,21 @@ import { useRouter } from "next/router.js";
 import useSWR from "swr";
 import styled from "styled-components";
 import { StyledLink } from "../../../components/StyledLink.js";
-import { StyledButton } from "../../../components/StyledButton.js";
 import { StyledImage } from "../../../components/StyledImage.js";
+import Card from "../../../components/Card.js";
 
-const ImageContainer = styled.div`
-    position: relative;
-    height: 15rem;
-`;
-
-const ButtonContainer = styled.section`
+const List = styled.ul`
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    gap: 0.2rem;
-
-    & > * {
-        flex-grow: 1;
-        text-align: center;
-    }
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 0;
 `;
 
-const StyledLocationLink = styled(StyledLink)`
-    text-align: center;
-    background-color: white;
-    border: 3px solid lightsalmon;
+const ListItem = styled.li`
+    position: relative;
+    width: 100%;
 `;
 
 export default function DetailsPage() {
@@ -43,24 +35,15 @@ export default function DetailsPage() {
             <Link href={"/coffeeshops"} passHref legacyBehavior>
                 <StyledLink justifySelf="start">back</StyledLink>
             </Link>
-            <ImageContainer>
-                <StyledImage
-                    src={shop.image}
-                    priority
-                    fill
-                    sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                    alt=""
+            <ListItem key={shop._id}>
+                <Card
+                    name={shop.name}
+                    location={shop.location}
+                    image={shop.image}
+                    mapURL={shop.mapURL}
+                    description={shop.description}
                 />
-            </ImageContainer>
-            <h2>
-                {shop.name}, {shop.location}
-            </h2>
-            <Link href={shop.mapURL} passHref legacyBehavior>
-                <StyledLocationLink>Location on Google Maps</StyledLocationLink>
-            </Link>
-            <p>{shop.description}</p>
+            </ListItem>
         </>
     );
 }

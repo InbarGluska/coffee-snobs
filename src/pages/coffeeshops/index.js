@@ -29,6 +29,7 @@ export default function CoffeeShops() {
                     return (
                         <ListItem key={shop._id}>
                             <Card
+                                id={shop._id}
                                 name={shop.name}
                                 location={shop.location}
                                 image={shop.image}
