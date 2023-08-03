@@ -34,7 +34,7 @@ const Figcaption = styled.figcaption`
     font-weight: bold;
 `;
 
-const Location = styled.p`
+const StyledP = styled.p`
     font-weight: bold;
 `;
 
@@ -75,12 +75,9 @@ export default function Card({
                 </ImageContainer>
                 <Figcaption>{name}</Figcaption>
             </Figure>
-            <Location>Location: {location}</Location>
-            {/* <p>mapURL: {mapURL}</p>
-            <p>description: {description}</p> */}
-            <SeeMoreLink href={`coffeeshops/${id}`}>
-                See more details
-            </SeeMoreLink>
+            <StyledP>Location: {location}</StyledP>
+            <StyledP>mapURL: {mapURL}</StyledP>
+            <StyledP>description: {description}</StyledP>
         </Article>
     );
 }
