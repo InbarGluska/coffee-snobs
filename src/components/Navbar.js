@@ -12,7 +12,7 @@ const NavbarContainer = styled.nav`
     right: 0;
     width: 100%;
     z-index: 1000;
-    border-top: 2px solid #dcdcdc;
+    border-top: 2px solid #808080;
 `;
 
 const List = styled.ul`
