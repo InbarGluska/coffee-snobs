@@ -24,6 +24,7 @@ const ReviewName = styled.span`
 
 const ReviewText = styled.p`
     margin-top: 0.5rem;
+    margin-bottom: 2rem;
 `;
 
 const Form = styled.form`
@@ -48,7 +49,7 @@ const SubmitButton = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 `;
 
 export default function ReviewsSection({ shopId }) {
