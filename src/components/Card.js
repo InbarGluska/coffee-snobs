@@ -79,7 +79,9 @@ export default function Card({
             {/* <p>mapURL: {mapURL}</p> */}
             {/* <p>description: {description}</p> */}
 
-            <SeeMoreLink href={`shops/${id}`}>See more details</SeeMoreLink>
+            <SeeMoreLink href={`coffeeshops/${id}`}>
+                See more details
+            </SeeMoreLink>
         </Article>
     );
 }
