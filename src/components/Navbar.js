@@ -29,8 +29,9 @@ const ListItem = styled.li`
 
 const NavLink = styled.a`
     text-decoration: none;
-    color: #61481c;
-    font-weight: bolder;
+    color: #361500;
+    font-weight: bold;
+    font-size: 20px;
 `;
 
 export default function Navbar() {
