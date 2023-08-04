@@ -5,11 +5,11 @@ import { StyledImage } from "@/components/StyledImage";
 const Article = styled.article`
     border: 2px solid #e0e0e0;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 2rem; /* Increase the padding */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
-    max-width: 400px;
-    margin: 1rem;
+    max-width: 600px; /* Increase the max-width */
+    margin: 2rem; /* Increase the margin */
 `;
 
 const ImageContainer = styled.div`
