@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import useLocalStorageState from "use-local-storage-state";
 
 const ReviewsContainer = styled.div`
     margin-top: 2rem;
@@ -50,7 +51,7 @@ const SubmitButton = styled.button`
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
 `;
 
 const DeleteButton = styled.button`
@@ -64,17 +65,10 @@ const DeleteButton = styled.button`
     font-weight: bold;
 `;
 
-export default function ReviewsSection({ shopId }) {
+export default function Reviews({ shopId }) {
     const [reviewName, setReviewName] = useState("");
     const [reviewText, setReviewText] = useState("");
-    const [reviews, setReviews] = useState([]);
-
-    useEffect(() => {
-        const storedReviews = JSON.parse(
-            localStorage.getItem("reviews") || "[]"
-        );
-        setReviews(storedReviews);
-    }, []);
+    const [reviews, setReviews] = useLocalStorageState("reviews", []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -90,10 +84,6 @@ export default function ReviewsSection({ shopId }) {
         setReviewName("");
         setReviewText("");
     };
-
-    useEffect(() => {
-        localStorage.setItem("reviews", JSON.stringify(reviews));
-    }, [reviews]);
 
     const handleDeleteReview = (id) => {
         setReviews((prevReviews) =>

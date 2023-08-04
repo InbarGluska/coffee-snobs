@@ -26,7 +26,11 @@ const ListItem = styled.li`
 `;
 
 export default function DetailsPage() {
-    const { id } = useRouter().query;
+    const router = useRouter();
+    const { isReady } = router;
+    const { push } = router;
+    const { id } = router.query;
+
     const { data: shop, isLoading, error } = useSWR(`/api/shops/${id}`);
 
     // State to manage the favorite status
@@ -62,6 +66,7 @@ export default function DetailsPage() {
 
     if (isLoading) return <h2>Loading...</h2>;
     if (error) return <h2>Error loading data</h2>;
+    if (!isReady || isLoading || error) return <h2>Loading...</h2>;
 
     return (
         <>
