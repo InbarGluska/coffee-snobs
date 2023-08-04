@@ -45,6 +45,9 @@ export default function Navbar() {
                     <NavLink href="/coffeeshops">Coffee Shops</NavLink>
                 </ListItem>
                 <ListItem>
+                    <NavLink href="/favorites">Favorites</NavLink>
+                </ListItem>
+                <ListItem>
                     <NavLink href="/baristajobs">Barista Jobs</NavLink>
                 </ListItem>
                 <ListItem>
