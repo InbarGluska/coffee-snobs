@@ -5,18 +5,23 @@ import { StyledImage } from "@/components/StyledImage";
 const Article = styled.article`
     border: 2px solid #e0e0e0;
     border-radius: 10px;
-    padding: 2rem; /* Increase the padding */
+    padding: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
-    max-width: 600px; /* Increase the max-width */
-    margin: 2rem; /* Increase the margin */
+    max-width: 600px;
+    margin: 2rem;
+    width: 360px;
+    height: 500px;
+    position: relative;
+    padding: 20px;
 `;
 
 const ImageContainer = styled.div`
     position: relative;
-    height: 200px;
+    height: 400px;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 1rem;
 `;
 
 const Image = styled.img`
@@ -31,6 +36,7 @@ const Figure = styled.figure`
 `;
 
 const Figcaption = styled.figcaption`
+    font-size: 22px;
     font-weight: bold;
 `;
 
@@ -38,7 +44,7 @@ const Location = styled.p`
     font-weight: bold;
 `;
 
-const SeeMoreLink = styled.a`
+export const SeeMoreLink = styled.a`
     display: block;
     background-color: #a47e3b;
     color: #ffffff;
@@ -48,6 +54,7 @@ const SeeMoreLink = styled.a`
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    width: 50%;
 
     &:hover {
         background-color: #61481c;
