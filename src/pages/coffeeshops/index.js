@@ -35,9 +35,10 @@ const SearchBar = styled.input`
     width: 300px;
     padding: 8px 12px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px #a47e3b;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    margin-top: 8px;
 `;
 
 export default function CoffeeShops() {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useLocalStorageState from "use-local-storage-state";
+import { global } from "styled-jsx/css";
 
 const ReviewsContainer = styled.div`
     margin-top: 2rem;
@@ -37,10 +38,13 @@ const Form = styled.form`
 
 const TextArea = styled.textarea`
     resize: vertical;
+    width: 80%;
+    height: 100px;
 `;
 
 const Input = styled.input`
     height: 2rem;
+    width: 50%;
 `;
 
 const SubmitButton = styled.button`
@@ -52,6 +56,7 @@ const SubmitButton = styled.button`
     cursor: pointer;
     font-weight: bold;
     margin-bottom: 4rem;
+    width: 20%;
 `;
 
 const DeleteButton = styled.button`

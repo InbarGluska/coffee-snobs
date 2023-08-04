@@ -82,14 +82,12 @@ export default function DetailsPage() {
                     description={shop.description}
                 />
             </ListItem>
-            {/* Use the FavoritesButton component with the appropriate onClick handler */}
             <FavoriteButton
                 isFavorite={isFavorite}
                 onToggleFavorite={handleFavorites}
             />
             <Reviews shopId={id} />
             <Navbar />
-            {/* Pass the isFavorite and shop props to FavoritesPage */}
             {isFavorite && (
                 <FavoritesPage isFavorite={isFavorite} shop={shop} />
             )}
