@@ -40,31 +40,24 @@ export default function DetailsPage() {
 
     const { data: shop, isLoading, error } = useSWR(`/api/shops/${id}`);
 
-    // State to manage the favorite status
     const [isFavorite, setIsFavorite] = useState(false);
 
-    // Load favorites from local storage on component mount
     useEffect(() => {
         const storedFavorites =
             JSON.parse(localStorage.getItem("favorites")) || [];
-        // Check if the current shop is already in favorites
         setIsFavorite(storedFavorites.some((favorite) => favorite._id === id));
     }, [id]);
 
-    // Function to handle adding/removing item to/from favorites
     const handleFavorites = () => {
         const storedFavorites =
             JSON.parse(localStorage.getItem("favorites")) || [];
-        // Check if the current shop is already in favorites
         if (storedFavorites.some((favorite) => favorite._id === id)) {
-            // Remove the shop from favorites
             const updatedFavorites = storedFavorites.filter(
                 (favorite) => favorite._id !== id
             );
             setIsFavorite(false);
             localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
         } else {
-            // Add the shop to favorites
             const updatedFavorites = [...storedFavorites, shop];
             setIsFavorite(true);
             localStorage.setItem("favorites", JSON.stringify(updatedFavorites));

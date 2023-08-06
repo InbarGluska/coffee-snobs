@@ -11,7 +11,7 @@ const Article = styled.article`
     max-width: 600px;
     margin: 2rem;
     width: 360px;
-    height: 500px;
+    height: 520px;
     position: relative;
     padding: 20px;
 `;
