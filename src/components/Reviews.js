@@ -83,6 +83,7 @@ export default function Reviews({ shopId }) {
             id: Date.now(),
             name: reviewName,
             text: reviewText,
+            shopId: shopId, // Add the coffee shop ID to the review
         };
 
         setReviews((prevReviews) => [newReview, ...prevReviews]);
@@ -95,6 +96,11 @@ export default function Reviews({ shopId }) {
             prevReviews.filter((review) => review.id !== id)
         );
     };
+
+    // Filter reviews based on the associated coffee shop ID
+    const filteredReviews = reviews.filter(
+        (review) => review.shopId === shopId
+    );
 
     return (
         <ReviewsContainer>
@@ -113,7 +119,7 @@ export default function Reviews({ shopId }) {
                 />
                 <SubmitButton type="submit">Submit Review</SubmitButton>
             </Form>
-            {reviews.map((review) => (
+            {filteredReviews.map((review) => (
                 <ReviewBox key={review.id}>
                     <ReviewHeader>
                         <ReviewName>{review.name}</ReviewName>
