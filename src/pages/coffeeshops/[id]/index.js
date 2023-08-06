@@ -96,9 +96,6 @@ export default function DetailsPage() {
                 />
                 <Reviews shopId={id} />
                 <Navbar />
-                {isFavorite && (
-                    <FavoritesPage isFavorite={isFavorite} shop={shop} />
-                )}
             </PageContainer>
         </>
     );

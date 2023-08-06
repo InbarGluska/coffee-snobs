@@ -1,16 +1,21 @@
 // FavoritesList.js
 import React from "react";
+import Card from "@/components/Card";
 
 const FavoritesList = ({ favorites }) => {
     return (
-        <ul>
-            {favorites.map((favorite) => (
-                <li key={favorite._id}>
-                    {/* Display your favorite item details here */}
-                    {favorite.name} - {favorite.location}
-                </li>
+        <>
+            {favorites.map((shop) => (
+                <Card
+                    key={shop._id}
+                    name={shop.name}
+                    location={shop.location}
+                    image={shop.image}
+                    // mapURL={shop.mapURL}
+                    // description={shop.description}
+                />
             ))}
-        </ul>
+        </>
     );
 };
 
