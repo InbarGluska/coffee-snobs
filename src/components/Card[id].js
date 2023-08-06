@@ -84,9 +84,13 @@ export default function Card({
                     <Figcaption>{name}</Figcaption>
                 </Figure>
                 <StyledP>Location: {location}</StyledP>
-                <Link href={`shops/${id}`} passHref legacyBehavior>
-                    <SeeMoreLink>Location on Google Maps</SeeMoreLink>
-                </Link>
+                <SeeMoreLink
+                    href={mapURL}
+                    target="_blank" // This will open the link in a new tab
+                    rel="noopener noreferrer" // For security reasons when using target="_blank"
+                >
+                    Location on Google Maps
+                </SeeMoreLink>
                 {/* <StyledP>mapURL: {mapURL}</StyledP> */}
                 <StyledP>description: {description}</StyledP>
             </Article>
