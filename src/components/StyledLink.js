@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const StyledLink = styled.a`
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 15px;
     margin: 10px;
-    font-size: 22px;
+    font-size: 40px;
     font-weight: bold;
     text-decoration: none;
     color: white;
