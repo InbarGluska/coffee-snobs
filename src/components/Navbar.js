@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import { AiOutlineRead, AiOutlineHeart, AiOutlineHome } from "react-icons/ai";
+import { PiCoffee } from "react-icons/pi";
+import { BsHeart } from "react-icons/bs";
 
 const NavbarContainer = styled.nav`
     background-color: white;
-    padding: 1rem;
+    padding: 0.3rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     bottom: 0;
@@ -31,7 +33,9 @@ const NavLink = styled.a`
     text-decoration: none;
     color: #361500;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 35px;
+    margin-right: 4rem;
+    margin-left: 2rem;
 `;
 
 export default function Navbar() {
@@ -39,19 +43,27 @@ export default function Navbar() {
         <NavbarContainer>
             <List>
                 <ListItem>
-                    <NavLink href="/">Home </NavLink>
+                    <NavLink href="/">
+                        <AiOutlineHome />
+                    </NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink href="/coffeeshops">Coffee Shops</NavLink>
+                    <NavLink href="/coffeeshops">
+                        <PiCoffee />
+                    </NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink href="/favorites">Favorites</NavLink>
+                    <NavLink href="/favorites">
+                        <AiOutlineHeart />
+                    </NavLink>
                 </ListItem>
-                <ListItem>
+                {/* <ListItem>
                     <NavLink href="/baristajobs">Barista Jobs</NavLink>
-                </ListItem>
+                </ListItem> */}
                 <ListItem>
-                    <NavLink href="/articles">Articles</NavLink>
+                    <NavLink href="/articles">
+                        <AiOutlineRead />
+                    </NavLink>
                 </ListItem>
             </List>
         </NavbarContainer>

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useLocalStorageState from "use-local-storage-state";
-import { global } from "styled-jsx/css";
+import { TiDeleteOutline } from "react-icons";
 
 const ReviewsContainer = styled.div`
     margin-top: 2rem;
+    margin-bottom: 4rem;
 `;
 
 const ReviewBox = styled.div`
@@ -12,16 +13,23 @@ const ReviewBox = styled.div`
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50%;
 `;
 
 const ReviewHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 `;
 
-const ReviewName = styled.span`
-    font-weight: bold;
+const ReviewName = styled.span``;
+
+const ReviewDate = styled.span`
+    color: #888;
 `;
 
 const ReviewText = styled.p`
@@ -38,25 +46,33 @@ const Form = styled.form`
 
 const TextArea = styled.textarea`
     resize: vertical;
-    width: 80%;
-    height: 100px;
+    width: 51%;
+    height: 70px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 0.5rem;
 `;
 
 const Input = styled.input`
-    height: 2rem;
-    width: 50%;
+    height: 1.5rem;
+    width: 20%;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 0.5rem;
 `;
 
 const SubmitButton = styled.button`
-    background-color: #361500;
+    background-color: #a47e3b;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-bottom: 4rem;
-    width: 20%;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 4rem;
+    font-size: 16px;
 `;
 
 const DeleteButton = styled.button`
@@ -66,8 +82,8 @@ const DeleteButton = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: auto;
     font-weight: bold;
+    margin-left: auto;
 `;
 
 export default function Reviews({ shopId }) {
@@ -123,8 +139,9 @@ export default function Reviews({ shopId }) {
                 <ReviewBox key={review.id}>
                     <ReviewHeader>
                         <ReviewName>{review.name}</ReviewName>
-                        <span>–</span>
-                        <span>{new Date(review.id).toLocaleDateString()}</span>
+                        <ReviewDate>
+                            {new Date(review.id).toLocaleDateString()}
+                        </ReviewDate>
                         <DeleteButton
                             onClick={() => handleDeleteReview(review.id)}
                         >

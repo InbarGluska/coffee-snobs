@@ -10,6 +10,7 @@ const PageContainer = styled.div`
     background-size: 100%;
     min-height: 100vh;
     background-attachment: fixed;
+    margin-bottom: 2rem;
 `;
 
 const CenteredContainer = styled.div`
