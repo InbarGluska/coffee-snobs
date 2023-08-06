@@ -11,6 +11,13 @@ import Reviews from "@/components/Reviews.js";
 import FavoriteButton from "@/components/FavoriteButton.js";
 import FavoritesPage from "@/pages/favorites/index.js";
 
+const PageContainer = styled.div`
+    background-image: url("https://scontent-ber1-1.xx.fbcdn.net/v/t39.30808-6/329395598_903465677461064_341034161008898629_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_ohc=WGvMxhAeNssAX_a-dh3&_nc_ht=scontent-ber1-1.xx&oh=00_AfCUXyBlUhJJ0hOleiizsif1Rz-msxOcS3DG5rRwT7vkkQ&oe=64D3E62B");
+    background-size: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
+`;
+
 const List = styled.ul`
     list-style: none;
     display: flex;
@@ -70,27 +77,29 @@ export default function DetailsPage() {
 
     return (
         <>
-            <Link href={"/coffeeshops"} passHref legacyBehavior>
-                <StyledLink justifySelf="start">back</StyledLink>
-            </Link>
-            <ListItem key={shop._id}>
-                <Card
-                    name={shop.name}
-                    location={shop.location}
-                    image={shop.image}
-                    mapURL={shop.mapURL}
-                    description={shop.description}
+            <PageContainer>
+                <Link href={"/coffeeshops"} passHref legacyBehavior>
+                    <StyledLink justifySelf="start">back</StyledLink>
+                </Link>
+                <ListItem key={shop._id}>
+                    <Card
+                        name={shop.name}
+                        location={shop.location}
+                        image={shop.image}
+                        mapURL={shop.mapURL}
+                        description={shop.description}
+                    />
+                </ListItem>
+                <FavoriteButton
+                    isFavorite={isFavorite}
+                    onToggleFavorite={handleFavorites}
                 />
-            </ListItem>
-            <FavoriteButton
-                isFavorite={isFavorite}
-                onToggleFavorite={handleFavorites}
-            />
-            <Reviews shopId={id} />
-            <Navbar />
-            {isFavorite && (
-                <FavoritesPage isFavorite={isFavorite} shop={shop} />
-            )}
+                <Reviews shopId={id} />
+                <Navbar />
+                {isFavorite && (
+                    <FavoritesPage isFavorite={isFavorite} shop={shop} />
+                )}
+            </PageContainer>
         </>
     );
 }
