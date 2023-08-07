@@ -73,6 +73,9 @@ const SubmitButton = styled.button`
     max-width: 200px;
     margin: 0 auto 4rem;
     font-size: 16px;
+    &:hover {
+        background-color: #61481c;
+    }
 `;
 
 const DeleteButton = styled.button`

@@ -19,11 +19,11 @@ const Article = styled.article`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     max-width: 600px;
-    margin: 2rem;
-    width: 800px;
-    height: 800px;
+    width: 100%;
     position: relative;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
 const ImageContainer = styled.div`
@@ -31,6 +31,7 @@ const ImageContainer = styled.div`
     height: 400px;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 2rem;
 `;
 
 const Image = styled.img`
@@ -93,7 +94,7 @@ export default function Card({
                     Location on Google Maps
                 </SeeMoreLink>
                 {/* <StyledP>mapURL: {mapURL}</StyledP> */}
-                <StyledP>description: {description}</StyledP>
+                <StyledP> {description}</StyledP>
             </Article>
         </CenteredContainer>
     );

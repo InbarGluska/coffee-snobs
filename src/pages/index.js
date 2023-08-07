@@ -20,6 +20,8 @@ const Quote = styled.p`
     padding-left: 1rem;
     color: #333;
     position: relative;
+    background-image: linear-gradient(to right, #f9f9f9, #fff);
+    margin-bottom: 4rem;
 
     &:before {
         content: '"';
