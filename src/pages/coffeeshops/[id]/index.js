@@ -41,6 +41,18 @@ const Loading = styled.div`
     background-repeat: no-repeat;
 `;
 
+const BackButton = styled.button`
+    background-color: #a47e3b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: auto;
+    font-size: 16px;
+`;
+
 export default function DetailsPage() {
     const router = useRouter();
     const { isReady } = router;
@@ -81,9 +93,9 @@ export default function DetailsPage() {
         <>
             <PageContainer>
                 <Link href={"/coffeeshops"} passHref legacyBehavior>
-                    <StyledLink justifySelf="start">
-                        <BiArrowBack />
-                    </StyledLink>
+                    <BackButton justifySelf="start">
+                        <BiArrowBack size={40} />
+                    </BackButton>
                 </Link>
                 <ListItem key={shop._id}>
                     <Card
