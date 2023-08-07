@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { StyledImage } from "@/components/StyledImage";
 import { StyledLink } from "./StyledLink";
 import { SeeMoreLink } from "./Card";
-import { AiOutlineHeart } from "react-icons/ai";
 
 const CenteredContainer = styled.div`
     display: flex;
@@ -47,6 +46,7 @@ const Figure = styled.figure`
 
 const Figcaption = styled.figcaption`
     font-weight: bold;
+    font-size: 22px;
 `;
 
 const StyledP = styled.p`
