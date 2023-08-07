@@ -82,7 +82,7 @@ export default function Card({
                 </ImageContainer>
                 <Figcaption>{name}</Figcaption>
             </Figure>
-            <Location>Location: {location}</Location>
+            <Location> {location}</Location>
             {/* <p>mapURL: {mapURL}</p>
             <p>description: {description}</p> */}
             <SeeMoreLink href={`coffeeshops/${id}`}>

@@ -23,9 +23,8 @@ const CenteredContainer = styled.div`
 
 const List = styled.ul`
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding-left: 0;
     margin-bottom: 3rem;
@@ -33,9 +32,6 @@ const List = styled.ul`
 
 const ListItem = styled.li`
     position: relative;
-    width: 100%;
-    max-width: 400px; /* Set the maximum width for each card */
-    margin: 0 auto; /* Center the cards */
 `;
 
 const SearchBar = styled.input`
