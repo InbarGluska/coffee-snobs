@@ -113,6 +113,14 @@ export default function Reviews({ shopId }) {
         );
     };
 
+    // Function to check if a review was written 5 minutes ago
+    const isFiveMinutesAgo = (timestamp) => {
+        const currentTime = new Date().getTime();
+        const reviewTime = new Date(timestamp).getTime();
+        const fiveMinutesInMilliseconds = 5 * 60 * 1000; // 5 minutes in milliseconds
+        return currentTime - reviewTime <= fiveMinutesInMilliseconds;
+    };
+
     // Filter reviews based on the associated coffee shop ID
     const filteredReviews = reviews.filter(
         (review) => review.shopId === shopId
@@ -142,11 +150,13 @@ export default function Reviews({ shopId }) {
                         <ReviewDate>
                             {new Date(review.id).toLocaleDateString()}
                         </ReviewDate>
-                        <DeleteButton
-                            onClick={() => handleDeleteReview(review.id)}
-                        >
-                            X
-                        </DeleteButton>
+                        {isFiveMinutesAgo(review.id) && ( // Show the delete button if the review was written 5 minutes ago
+                            <DeleteButton
+                                onClick={() => handleDeleteReview(review.id)}
+                            >
+                                X
+                            </DeleteButton>
+                        )}
                     </ReviewHeader>
                     <ReviewText>{review.text}</ReviewText>
                 </ReviewBox>
