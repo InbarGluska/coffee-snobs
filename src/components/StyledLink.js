@@ -12,6 +12,7 @@ export const StyledLink = styled.a`
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 3rem;
 
     &:hover {
         background-color: #61481c;

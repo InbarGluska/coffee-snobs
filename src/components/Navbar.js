@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AiOutlineRead, AiOutlineHeart, AiOutlineHome } from "react-icons/ai";
 import { PiCoffee } from "react-icons/pi";
-import { BsHeart } from "react-icons/bs";
+import { BsBriefcase } from "react-icons/bs";
 
 const NavbarContainer = styled.nav`
     background-color: white;
@@ -57,14 +57,16 @@ export default function Navbar() {
                         <AiOutlineHeart />
                     </NavLink>
                 </ListItem>
-                {/* <ListItem>
-                    <NavLink href="/baristajobs">Barista Jobs</NavLink>
-                </ListItem> */}
                 <ListItem>
+                    <NavLink href="/baristajobs">
+                        <BsBriefcase />
+                    </NavLink>
+                </ListItem>
+                {/* <ListItem>
                     <NavLink href="/articles">
                         <AiOutlineRead />
                     </NavLink>
-                </ListItem>
+                </ListItem> */}
             </List>
         </NavbarContainer>
     );
