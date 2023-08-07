@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { StyledImage } from "@/components/StyledImage";
 import { StyledLink } from "./StyledLink";
 import { SeeMoreLink } from "./Card";
+import { FaLocationDot } from "react-icons/fa";
 
 const CenteredContainer = styled.div`
     display: flex;
@@ -85,15 +86,14 @@ export default function Card({
                     </ImageContainer>
                     <Figcaption>{name}</Figcaption>
                 </Figure>
-                <StyledP>Location: {location}</StyledP>
+                <StyledP> {location}</StyledP>
                 <SeeMoreLink
                     href={mapURL}
-                    target="_blank" // This will open the link in a new tab
-                    rel="noopener noreferrer" // For security reasons when using target="_blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     Location on Google Maps
                 </SeeMoreLink>
-                {/* <StyledP>mapURL: {mapURL}</StyledP> */}
                 <StyledP> {description}</StyledP>
             </Article>
         </CenteredContainer>

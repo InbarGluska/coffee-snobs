@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useLocalStorageState from "use-local-storage-state";
-import { TiDeleteOutline } from "react-icons";
+import { TiDeleteOutline } from "react-icons/ti"; // Correct the import statement for the delete icon
 
 const ReviewsContainer = styled.div`
     margin-top: 2rem;
@@ -79,7 +79,7 @@ const SubmitButton = styled.button`
 `;
 
 const DeleteButton = styled.button`
-    background-color: red;
+    background-color: white;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -87,6 +87,12 @@ const DeleteButton = styled.button`
     cursor: pointer;
     font-weight: bold;
     margin-left: auto;
+    font-size: 16px;
+`;
+
+const Counter = styled.span`
+    font-weight: bold;
+    margin-bottom: 1rem;
 `;
 
 export default function Reviews({ shopId }) {
@@ -102,7 +108,7 @@ export default function Reviews({ shopId }) {
             id: Date.now(),
             name: reviewName,
             text: reviewText,
-            shopId: shopId, // Add the coffee shop ID to the review
+            shopId: shopId,
         };
 
         setReviews((prevReviews) => [newReview, ...prevReviews]);
@@ -116,22 +122,23 @@ export default function Reviews({ shopId }) {
         );
     };
 
-    // Function to check if a review was written 5 minutes ago
     const isFiveMinutesAgo = (timestamp) => {
         const currentTime = new Date().getTime();
         const reviewTime = new Date(timestamp).getTime();
-        const fiveMinutesInMilliseconds = 5 * 60 * 1000; // 5 minutes in milliseconds
+        const fiveMinutesInMilliseconds = 5 * 60 * 1000;
         return currentTime - reviewTime <= fiveMinutesInMilliseconds;
     };
 
-    // Filter reviews based on the associated coffee shop ID
     const filteredReviews = reviews.filter(
         (review) => review.shopId === shopId
     );
 
+    const numOfReviews = filteredReviews.length; // Calculate the number of reviews
+
     return (
         <ReviewsContainer>
             <h2>Reviews</h2>
+
             <Form onSubmit={handleSubmit}>
                 <Input
                     type="text"
@@ -146,6 +153,9 @@ export default function Reviews({ shopId }) {
                 />
                 <SubmitButton type="submit">Submit Review</SubmitButton>
             </Form>
+            <Counter>
+                {numOfReviews} {numOfReviews === 1 ? "Review" : "Reviews"}
+            </Counter>
             {filteredReviews.map((review) => (
                 <ReviewBox key={review.id}>
                     <ReviewHeader>
@@ -153,11 +163,11 @@ export default function Reviews({ shopId }) {
                         <ReviewDate>
                             {new Date(review.id).toLocaleDateString()}
                         </ReviewDate>
-                        {isFiveMinutesAgo(review.id) && ( // Show the delete button if the review was written 5 minutes ago
+                        {isFiveMinutesAgo(review.id) && (
                             <DeleteButton
                                 onClick={() => handleDeleteReview(review.id)}
                             >
-                                X
+                                <TiDeleteOutline color="red" size={30} />
                             </DeleteButton>
                         )}
                     </ReviewHeader>

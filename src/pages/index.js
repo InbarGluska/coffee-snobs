@@ -38,10 +38,11 @@ export default function Home() {
     return (
         <HomeContainer>
             <Quote>
-                "Even bad coffee is better than no coffee at all." - David Lynch
+                “Coffee is a lot more than just a drink; it’s something
+                happening.” - Gertrude Stein
             </Quote>
             <StyledLink href="/coffeeshops">Coffee Shops</StyledLink>
-            <StyledLink href="/articles">My Favorites</StyledLink>
+            <StyledLink href="/favorites">My Favorites</StyledLink>
             <StyledLink href="/baristajobs">Barista Jobs</StyledLink>
         </HomeContainer>
     );
