@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useLocalStorageState from "use-local-storage-state";
-import { TiDeleteOutline } from "react-icons/ti"; // Correct the import statement for the delete icon
+import { TiDeleteOutline } from "react-icons/ti";
 
 const ReviewsContainer = styled.div`
     margin-top: 2rem;
@@ -51,6 +51,10 @@ const TextArea = styled.textarea`
     border: 1px solid #dcdcdc;
     border-radius: 5px;
     padding: 0.5rem;
+    font-family: "Montserrat", sans-serif;
+    ::placeholder {
+        font-family: "Montserrat", sans-serif;
+    }
 `;
 
 const Input = styled.input`
@@ -133,7 +137,7 @@ export default function Reviews({ shopId }) {
         (review) => review.shopId === shopId
     );
 
-    const numOfReviews = filteredReviews.length; // Calculate the number of reviews
+    const numOfReviews = filteredReviews.length;
 
     return (
         <ReviewsContainer>

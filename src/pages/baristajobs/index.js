@@ -6,24 +6,49 @@ const PageContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: -1.5rem;
+`;
+
+export const StyledH2 = styled.div`
+    /* display: inline-block; */
+    padding: 10px 15px;
+    font-size: 37px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #a47e3b;
+    border-radius: 0px;
+    /* cursor: pointer; */
+    transition: background-color 0.3s ease;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 `;
 
 const CoffeeShopAdsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-top: 0rem;
-    background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_JIu-X1CQ5IeMtCEnbjVRgwrGhZoii-iC0Ya7qKyuUFy5GlavWwWSn4ZnaHqzw2jtLcD1Mh3_BG5Qqa8gefG9rTM64bw9a7YqJDV9iRpLQx7mr4tV8izSlv1BMpOSp_18ZsfrSl9_fI2MPNmlueXWnL973jAXSHXZTX2RvroVEAv9hN-0tbtbH5MEy--KGHItEVvKkbw_n5od9xELiOOng4osMkVwsH8eSyMXkUgy4cKauivNDmQ_QxtNPALHm_UgsOMVAI-bb2bkFStFAGKd8fSiFW8ZFV51R5APOw1bWMw40qzSKfQCMl0lLGw8cn_M6SoXIlyZbt3dDja48IlTgN8pl0ZwqyaK_iGd94X8nvkYR9s-ah2MUU5QP-ZDRqgfnvvbpq1_QtkWq_KNHXBhgA341TgQpG7TStyGYPdjRct-KhexpU3K4a9Y-Lp6HVK_7xr2U-zuREdmH4C6-7hmyN3pPdPIQii8JeRTJn2LVaWM3OMU8nIxGjsmxjxkqv2XqkNPG8tlgMbx8nasIpZ71111LRXrz1PRj8BBAInhtXd4S93NxnDrfLqVPiBcRVKoQzuu9RHVKRBtFNgJLSCZBdG6pMEsbxoH9sJ_7tMckoGdmaGkdrkrnDucIO62FPVeQ79BrjMWmtiVZflLFmq7LnOqRwUPEBuoB2Ve6lgFTM0HxUtRzMdL6UdaZk2h14g9y4hVEI6ovZHVBo96Vp4Gw4S3n1wJ3f9wfQMhMoJtKHT0mJWIXIWvT1ixiCQ2-B5clJznyVtRxP6ZLO4ariI28DYGeNvFRykML03yMSm-7HqLnI4J1k93unqAJzXQUkBEWPaqvA5VUuyR7gCNlbTSZgiS-HbdvCfmjCPIpnUhzWO8qBXJ5cC4ODeJ9thAscpQYx2ftZ5rUfkihLO227askhA=w1326-h884-s-no?authuser=0");
+    background-image: url("https://lh3.googleusercontent.com/fife/AKsag4OctztB4Y7Qjvse5NBm0zgFx1p7-EURPN_cDGmo8l2UQ2z1fYjYDcmWP0V1Sxalq6SBltS5lRn3bjDTzDEl67nwD_HO58-xpAb9Vu58PTEQusA-AkZRqj_RHCTQPIucDZo7YSAa3UDSgewqrdIuji56UiF9zhj1O6QqsrA4yiEs0XNUi_JemakZ2R_gR5CWSxAcVyvzFYags74ujgRgkMbFGGIPzHyZg9yqIXSuXsTGaRGicvKrn3PQEf2t6Pd2O3OCiSK8jD_9GK7TbdY4Vxvo1UCjqowcasotCmwAj-lsjoo9IQuWHqaywOVUAcFWx5MzEXhuskMONgkp44H8vbcAU4uWTZaZMwIB6znWFW8D9sXOAgDbWNyzsjCOu1mv51OtsQfdJfgN2aZfWcuAut5JhvDGNnMdkuPQ-x0P4ZTigMznx9o09ledDxBSfFIIjUZ5Xdl4RxFTeY2x3wIzoAKssyjnm2SVGDoXJuYwug_eHkqjUCppL3PRMWGX-wZxSOlIaxjV_rJlcHqpyL88Gg_2qQgnTX_boC1k950iof-GThyudjYfjADKDVSxw8BZaYq63Jg78ZAi82leYdn7dph-1NytMmJKz8JiGT7HQZxxv0MTZsB7rWEvrVNbm5xuXvCnlB_ZRpWg46J-8Lx8cmwxIknID_HD6bBNL4AFCGFHEr0E9un1bOtTlmGGiSfKvsVoPZAYu9pGdu4vfET90OtmliAHVOwEoayd18BQpDQLGOnPOhkBXIbf7IRiW3BZGHtC5G3DmYv8DXFrA8ApXqbWNDfIT0GsMH4wu7xu7wBBo94uV0fSPkXr54KHXwWOvCLJEgTvQ9lznvCxOBmchHbyY9W1J-WgcdC9IPiLH9HTaa0C9O0NaR-Cyk4OvsrAy3VFOtXFyfM_wKh0A0ToHxLWrcSUwFk_mKQuAEQO5w89JR_KeUmB1gDtkir1uqnUQCeqVmz2m0o0sz-wyn3DXQxfR1OQnr12jQTu8AphjMkMsZbyoYj4d6UGrsyvybfoJeE2-ShMXuaKXdr8gWy9dozxlta4xDsz7obnHshKP9rFExVJRjpMB3olOSTJRwzRXGApMeTewJH6D3RtXoetNrs73NPEcLP4jpxQpOcMxEbT4ED2q99CQStyRkgrGYfhJAaQ0rk1crgzoBqFq9JgUzYLdMZ3rZrP0sT_VDb1TD0kAKg18YQ-SFPAHkc_16Dkqc7zAqWQfm7cDzgZ0GkgP9chwRfRJ7lfZVuPZAfV74cEyqhqP1MjMj0ffqamRFrbb7LgV81lKMvlHo0RKjyuRsL9GtkA2RjCflQuYKwpUv0zZKiv0HnEqbRRFdCxOigXy0NJj2IURBMTTWcuHLmsLIperXf_M_iKeHfovmXi9Fiu6uxjy5bFhV9AblZYoabgyuDOFvC4naeJOhH4HS4Kakq6dKENwnprRQe85sJnB5lhSV71OsOUEQ2zbRnM9WZqxR7GOBRIV6wbGXxTLK7NOotnGVjUXxfIdZa5zkNT0P6rspBbluWvIsQ2W0wyOyaevZr5FaAarfCiAD1W-gTTzF_fXoZvM8qujj9e=s1326-w1326-h884-s-no?authuser=0");
     background-size: 100%;
     min-height: 100vh;
     background-attachment: fixed;
+    margin-bottom: 2rem;
 `;
 
 const AdCard = styled.div`
     border: 1px solid #dcdcdc;
     border-radius: 8px;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 50%;
+    width: 40%;
 `;
 
 const AdTitle = styled.h3`
@@ -212,11 +237,10 @@ export default function CoffeeShopAds() {
 
     return (
         <PageContainer>
+            <StyledH2>
+                Looking for a job as a Barista? This is the place for you!
+            </StyledH2>
             <CoffeeShopAdsContainer>
-                <h2>
-                    Are you looking for a job as a Barista? this is the place
-                    for you!
-                </h2>
                 {jobAds.map((ad) => (
                     <AdCard key={ad.id}>
                         <AdTitle>{ad.title}</AdTitle>

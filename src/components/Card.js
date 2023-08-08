@@ -49,12 +49,14 @@ export const SeeMoreLink = styled.a`
     background-color: #a47e3b;
     color: #ffffff;
     padding: 2px 16px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    width: 50%;
+    width: 35%;
+    margin: auto;
+    padding: 5px;
 
     &:hover {
         background-color: #61481c;
@@ -85,9 +87,7 @@ export default function Card({
             <Location> {location}</Location>
             {/* <p>mapURL: {mapURL}</p>
             <p>description: {description}</p> */}
-            <SeeMoreLink href={`coffeeshops/${id}`}>
-                See more details
-            </SeeMoreLink>
+            <SeeMoreLink href={`coffeeshops/${id}`}>More Details</SeeMoreLink>
         </Article>
     );
 }
