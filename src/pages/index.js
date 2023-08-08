@@ -16,13 +16,15 @@ const Quote = styled.p`
     font-size: 24px;
     font-style: italic;
     margin-top: 1rem;
-    border-left: 3px solid #a47e3b;
     padding-left: 1rem;
     color: #333;
     position: relative;
     background-image: linear-gradient(to right, #f9f9f9, #fff);
     margin-bottom: 4rem;
+    border-radius: 20px;
+    padding: 5px;
 
+    /* 
     &:before {
         content: '"';
         font-size: 40px;
@@ -31,7 +33,7 @@ const Quote = styled.p`
         top: -5px;
         left: -15px;
         color: #a47e3b;
-    }
+    } */
 `;
 
 export default function Home() {
