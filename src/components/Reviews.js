@@ -52,9 +52,6 @@ const TextArea = styled.textarea`
     border-radius: 5px;
     padding: 0.5rem;
     font-family: "Montserrat", sans-serif;
-    ::placeholder {
-        font-family: "Montserrat", sans-serif;
-    }
 `;
 
 const Input = styled.input`
@@ -63,6 +60,7 @@ const Input = styled.input`
     border: 1px solid #dcdcdc;
     border-radius: 5px;
     padding: 0.5rem;
+    font-family: "Montserrat", sans-serif;
 `;
 
 const SubmitButton = styled.button`
