@@ -6,7 +6,7 @@ const ButtonContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 5px 15px;
+    padding: 10px 15px;
     margin: 0px;
     margin-left: 700px;
     font-size: 50px;
@@ -18,6 +18,7 @@ const ButtonContainer = styled.div`
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 1rem;
+    width: 2%;
 `;
 
 const FavoriteButton = ({ shop, isFavorite, onToggleFavorite }) => {
