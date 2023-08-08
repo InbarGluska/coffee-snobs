@@ -3,10 +3,13 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import styled from "styled-components";
 
 const ButtonContainer = styled.div`
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 5px 15px;
     margin: 0px;
-    font-size: 40px;
+    margin-left: 700px;
+    font-size: 50px;
     font-weight: bold;
     text-decoration: none;
     color: white;
